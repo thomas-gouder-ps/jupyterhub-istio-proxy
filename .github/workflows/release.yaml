@@ -19,7 +19,7 @@ jobs:
       - name: Prepare env
         run: echo "GO_VERSION=$(go version | awk '{ print $3}' | sed 's/^go//')" >> $GITHUB_ENV
       - name: Login to docker
-        run: docker login -u harsimranmaan -p ${{ secrets.DOCKER_CD_TOKEN }}
+        run: docker login -u thomasgouderps -p ${{ secrets.DOCKER_CD_TOKEN }}
       - name: Release via goreleaser
         uses: goreleaser/goreleaser-action@v2
         with:
