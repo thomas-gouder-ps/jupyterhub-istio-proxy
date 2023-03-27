@@ -3,7 +3,7 @@ builds:
     binary: jupyterhub-istio-proxy
     main: ./
     ldflags:
-      - -X github.com/splunk/jupyterhub-istio-proxy/proxy.version={{.Version}} -X github.com/splunk/jupyterhub-istio-proxy/proxy.commit={{.Commit}} -X github.com/splunk/jupyterhub-istio-proxy/proxy.goVersion={{.Env.GO_VERSION}}
+      - -X github.com/thomas-gouder-ps/jupyterhub-istio-proxy/proxy.version={{.Version}} -X github.com/thomas-gouder-ps/jupyterhub-istio-proxy/proxy.commit={{.Commit}} -X github.com/thomas-gouder-ps/jupyterhub-istio-proxy/proxy.goVersion={{.Env.GO_VERSION}}
     env:
       - CGO_ENABLED=0
     goos:
