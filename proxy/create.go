@@ -90,8 +90,12 @@ func annotationForRoute(i *IstioClient, r route) (map[string]string, error) {
 }
 
 func warmup(name string, url string) error {
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
 	client := &http.Client{
 		Timeout: 3 * time.Second,
+		Transport: tr,
 		CheckRedirect: func(req *http.Request, via []*http.Request) error {
 			return http.ErrUseLastResponse
 		},
