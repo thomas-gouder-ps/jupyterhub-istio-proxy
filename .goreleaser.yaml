@@ -20,7 +20,7 @@ archives:
 dockers:
   - dockerfile: Dockerfile
     image_templates:
-      - "thomasgouderps/jupyterhub-istio-proxy-patched:v0.3.3-patch"
+      - "thomasgouderps/jupyterhub-istio-proxy-patched:v0.3.4-patch"
 
 checksum:
   name_template: "sha256-checksums.txt"
