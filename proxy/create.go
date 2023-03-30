@@ -47,8 +47,7 @@ func (i *IstioClient) createVirtualService(r route) error {
 	// If the destinationHost already has its complete fqdn we don't need to append namespace of the hub, service and cluster domain again.
 	// This could be the case if the notebook pod is running in an other namespace than the hub pod
 	// and c.KubeSpawner.pod_connect_ip needs to be set to something like "jupyter-{username}.<target-namespace-of-notebook>.svc.cluster.local"
-	// Note: this is bypassed if the destinationHost is an IP address
-	if !strings.HasSuffix(destinationHost, fmt.Sprintf(".svc.%s", i.clusterDomain)) && !(strings.Count(destinationHost, ".") == 3) {
+	if !strings.HasSuffix(destinationHost, fmt.Sprintf(".svc.%s", i.clusterDomain)) {
 		destinationHost = fmt.Sprintf("%s.%s.svc.%s", destinationHost, i.namespace, i.clusterDomain)
 	}
 
