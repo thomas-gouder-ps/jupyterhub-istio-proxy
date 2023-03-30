@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     branches:
-      - "build"
+      - "main"
 
 jobs:
   build:
@@ -26,4 +26,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
       - name: Docker push
-        run: docker push thomasgouderps/jupyterhub-istio-proxy-patched:v0.3.3-patch
+        run: docker push thomasgouderps/jupyterhub-istio-proxy-patched:v0.3.4-patch
